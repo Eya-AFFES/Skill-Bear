@@ -1,0 +1,7 @@
+{
+  "utterance": "Move forward",
+  "intent_type": "HelloWorldIntent",
+  "intent": {
+    "HelloWorldKeyword": "move forward"
+  }
+}
