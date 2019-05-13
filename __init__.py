@@ -13,7 +13,6 @@ from mycroft.util.log import getLogger
 #Importing the required libraries. These 3 libraries will be required on every Skill
 
 import serial
-import re
 ser00 = serial.Serial ("/dev/ttyS0", 9600)    #Open port with baud rate
 
 LOGGER = getLogger(__name__)
@@ -26,7 +25,7 @@ class MoveStopSkill(MycroftSkill):
         super(MoveStopSkill, self).__init__(name="MoveStopSkill")
         
     def initialize(self):
-        #initialize()function defines each of the Intents of the Skill. Note that there are three Intents defined
+        #initialize()function defines each of the Intents of the Skill. 
         
         #Intents defined in vocab files
         S_T_intent = IntentBuilder("STIntent").require("STKeyword").build()
@@ -37,7 +36,7 @@ class MoveStopSkill(MycroftSkill):
 
         MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
-        
+ """       
         MV_R_intent = IntentBuilder("MVRIntent").require("MVRKeyword").build()
         self.register_intent(MV_R_intent, self.handle_MV_R_intent)
 
@@ -55,7 +54,7 @@ class MoveStopSkill(MycroftSkill):
    
         M_M_intent = IntentBuilder("MMIntent").require("MMKeyword").build()
         self.register_intent(M_M_intent, self.handle_M_M_intent)
-"""
+
         SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
         self.register_intent(SR_0_intent,self.handle_SR_0_intent)
 
@@ -76,7 +75,7 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("ST")
         msg="ST"
         ser00.write(bytes(msg, 'utf-8')) 
-        
+"""        
     def handle_MV_L_intent(self, message):
         self.speak_dialog("MV.L")
         msg="MVL"
@@ -106,7 +105,7 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MM")
         msg="MM"
         ser00.write(bytes(msg, 'utf-8'))
- """   
+  
     def handle_SR_0_intent(self, message):
         self.speak_dialog("SR.0")
         msg="SR0"
