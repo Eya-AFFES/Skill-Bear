@@ -55,6 +55,24 @@ class MoveStopSkill(MycroftSkill):
 
         MV_L_intent = IntentBuilder("MVLIntent").require("MVLKeyword").build()
         self.register_intent(MV_L_intent,self.handle_MV_L_intent)
+        
+        MH_F_intent = IntentBuilder("MHFIntent").require("MHFKeyword").build()
+        self.register_intent(MH_F_intent, self.handle_MH_F_intent)
+
+        MH_R_intent = IntentBuilder("MHRIntent").require("MHRKeyword").build()
+        self.register_intent(MH_R_intent,self.handle_MH_R_intent)
+
+        MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
+        self.register_intent(MH_L_intent ,self.handle_MH_L_intent)
+        
+        M_M_intent = IntentBuilder("MMIntent").require("MMKeyword").build()
+        self.register_intent(M_M_intent, self.handle_M_M_intent)
+
+        SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
+        self.register_intent(SR_0_intent,self.handle_SR_0_intent)
+
+        SR_1_intent = IntentBuilder("SR1Intent").require("SR1Keyword").build()
+        self.register_intent(SR_1_intent,self.handle_SR_1_intent)
 
     def handle_MV_F_intent(self, message):
         # A method that handles the Intent hello_world_intent
@@ -65,31 +83,60 @@ class MoveStopSkill(MycroftSkill):
         #hello.world dialog is passed to the  speak_dialog() method
         #this is defined in the file “hello.world.dialog”
         msg="MVF"
-        ser00.write(bytes(msg, 'utf-8')) 
-
+        ser00.write(bytes(msg, 'utf-8'))
     def handle_MV_B_intent(self, message):
         # A method that handles the Intent how_are_you_intent
         self.speak_dialog("MV.B")
         msg="MVB"
         ser00.write(bytes(msg, 'utf-8'))
-        
     def handle_S_T_intent(self, message):
         # A method that handles the Intent thank_you_intent
         self.speak_dialog("ST")
         msg="ST"
         ser00.write(bytes(msg, 'utf-8')) 
-       
     def handle_MV_L_intent(self, message):
         self.speak_dialog("MV.L")
         #hello.world dialog is passed to the  speak_dialog() method
         #this is defined in the file “hello.world.dialog”
         msg="MVL"
         ser00.write(bytes(msg, 'utf-8')) 
-    
     def handle_MV_R_intent(self, message):
         # A method that handles the Intent how_are_you_intent
         self.speak_dialog("MV.R")
         msg="MVR"
+        ser00.write(bytes(msg, 'utf-8'))
+    
+    def handle_MH_F_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("MH.F")
+        msg="MHF"
+        ser00.write(bytes(msg, 'utf-8'))
+    def handle_MH_R_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("MH.R")
+        msg="MHR"
+        ser00.write(bytes(msg, 'utf-8')
+    def handle_MH_L_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("MH.L")
+        msg="MHL"
+        ser00.write(bytes(msg, 'utf-8'))
+ 
+    def handle_M_M_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("MM")
+        msg="MM"
+        ser00.write(bytes(msg, 'utf-8'))
+    
+    def handle_SR_0_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("SR.0")
+        msg="SR0"
+        ser00.write(bytes(msg, 'utf-8'))
+    def handle_SR_1_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("SR.1")
+        msg="SR1"
         ser00.write(bytes(msg, 'utf-8'))
 
     
