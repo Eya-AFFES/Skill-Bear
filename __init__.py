@@ -43,16 +43,16 @@ class MoveStopSkill(MycroftSkill):
 
         MV_L_intent = IntentBuilder("MVLIntent").require("MVLKeyword").build()
         self.register_intent(MV_L_intent,self.handle_MV_L_intent)
-      
+      """
         MH_F_intent = IntentBuilder("MHFIntent").require("MHFKeyword").build()
         self.register_intent(MH_F_intent, self.handle_MH_F_intent)
-
+"""
         MH_R_intent = IntentBuilder("MHRIntent").require("MHRKeyword").build()
         self.register_intent(MH_R_intent,self.handle_MH_R_intent)
 
         MH_L_intent = IntentBuilder("MHLIntent").require("MHLKeyword").build()
         self.register_intent(MH_L_intent ,self.handle_MH_L_intent)
-       """ 
+       
         M_M_intent = IntentBuilder("MMIntent").require("MMKeyword").build()
         self.register_intent(M_M_intent, self.handle_M_M_intent)
 
@@ -61,7 +61,7 @@ class MoveStopSkill(MycroftSkill):
 
         SR_1_intent = IntentBuilder("SR1Intent").require("SR1Keyword").build()
         self.register_intent(SR_1_intent,self.handle_SR_1_intent)
-"""
+
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
         msg="MVF"
@@ -86,12 +86,12 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MV.R")
         msg="MVR"
         ser00.write(bytes(msg, 'utf-8'))
-   
+   """
     def handle_MH_F_intent(self, message):
         self.speak_dialog("MH.F")
         msg="MHF"
         ser00.write(bytes(msg, 'utf-8'))
-        
+    """    
     def handle_MH_R_intent(self, message):
         self.speak_dialog("MH.R")
         msg="MHR"
@@ -101,7 +101,7 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MH.L")
         msg="MHL"
         ser00.write(bytes(msg, 'utf-8'))
- """
+
     def handle_M_M_intent(self, message):
         self.speak_dialog("MM")
         msg="MM"
@@ -115,7 +115,7 @@ class MoveStopSkill(MycroftSkill):
     def handle_SR_1_intent(self, message):
         self.speak_dialog("SR.1")
         msg="SR1"
-        ser00.write(bytes(msg, 'utf-8')) """
+        ser00.write(bytes(msg, 'utf-8')) 
 
     
 
