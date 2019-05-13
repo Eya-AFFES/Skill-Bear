@@ -58,10 +58,10 @@ class MoveStopSkill(MycroftSkill):
 
         SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
         self.register_intent(SR_0_intent,self.handle_SR_0_intent)
-"""
+
         SR_1_intent = IntentBuilder("SR1Intent").require("SR1Keyword").build()
         self.register_intent(SR_1_intent,self.handle_SR_1_intent)
-
+"""
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
         msg="MVF"
