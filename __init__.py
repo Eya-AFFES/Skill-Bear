@@ -111,12 +111,12 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("SR.0")
         msg="SR0"
         ser00.write(bytes(msg, 'utf-8'))
-  """                  
+                   
     def handle_SR_1_intent(self, message):
         self.speak_dialog("SR.1")
         msg="SR1"
         ser00.write(bytes(msg, 'utf-8')) 
-
+"""
     
 
     def stop(self):
