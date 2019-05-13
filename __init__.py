@@ -40,7 +40,7 @@ class MoveStopSkill(MycroftSkill):
     def initialize(self):
         #initialize()function defines each of the Intents of the Skill. Note that there are three Intents defined
         
-        #three Intents defined in vocab files
+        #Intents defined in vocab files
         S_T_intent = IntentBuilder("STIntent").require("STKeyword").build()
         self.register_intent(S_T_intent, self.handle_S_T_intent)
 
@@ -49,6 +49,12 @@ class MoveStopSkill(MycroftSkill):
 
         MV_F_intent = IntentBuilder("MVFIntent").require("MVFKeyword").build()
         self.register_intent(MV_F_intent ,self.handle_MV_F_intent)
+        
+        MV_R_intent = IntentBuilder("MVRIntent").require("MVRKeyword").build()
+        self.register_intent(MV_R_intent, self.handle_MV_R_intent)
+
+        MV_L_intent = IntentBuilder("MVLIntent").require("MVLKeyword").build()
+        self.register_intent(MV_L_intent,self.handle_MV_L_intent)
 
     def handle_MV_F_intent(self, message):
         # A method that handles the Intent hello_world_intent
@@ -72,6 +78,19 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("ST")
         msg="ST"
         ser00.write(bytes(msg, 'utf-8')) 
+       
+    def handle_MV_L_intent(self, message):
+        self.speak_dialog("MV.L")
+        #hello.world dialog is passed to the  speak_dialog() method
+        #this is defined in the file “hello.world.dialog”
+        msg="MVL"
+        ser00.write(bytes(msg, 'utf-8')) 
+    
+    def handle_MV_R_intent(self, message):
+        # A method that handles the Intent how_are_you_intent
+        self.speak_dialog("MV.R")
+        msg="MVR"
+        ser00.write(bytes(msg, 'utf-8'))
 
     
 
