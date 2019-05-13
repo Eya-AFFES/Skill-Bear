@@ -1,19 +1,6 @@
 # Copyright 2016 Mycroft AI, Inc.
 #
 # This file is part of Mycroft Core.
-#
-# Mycroft Core is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# Mycroft Core is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
 __author__ = 'Eya-AFFES'
 
@@ -26,6 +13,7 @@ from mycroft.util.log import getLogger
 #Importing the required libraries. These 3 libraries will be required on every Skill
 
 import serial
+import re
 ser00 = serial.Serial ("/dev/ttyS0", 9600)    #Open port with baud rate
 
 LOGGER = getLogger(__name__)
