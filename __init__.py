@@ -56,24 +56,27 @@ class MoveStopSkill(MycroftSkill):
         M_M_intent = IntentBuilder("MMIntent").require("MMKeyword").build()
         self.register_intent(M_M_intent, self.handle_M_M_intent)
 
-        SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
+        '''SR_0_intent = IntentBuilder("SR0Intent").require("SR0Keyword").build()
         self.register_intent(SR_0_intent,self.handle_SR_0_intent)
 
         SR_1_intent = IntentBuilder("SR1Intent").require("SR1Keyword").build()
-        self.register_intent(SR_1_intent,self.handle_SR_1_intent)
+        self.register_intent(SR_1_intent,self.handle_SR_1_intent)'''
 
     def handle_MV_F_intent(self, message):
         self.speak_dialog("MV.F")
         msg="MVF"
         ser00.write(bytes(msg, 'utf-8'))
+        
     def handle_MV_B_intent(self, message):
         self.speak_dialog("MV.B")
         msg="MVB"
         ser00.write(bytes(msg, 'utf-8'))
+        
     def handle_S_T_intent(self, message):
         self.speak_dialog("ST")
         msg="ST"
         ser00.write(bytes(msg, 'utf-8')) 
+        
     def handle_MV_L_intent(self, message):
         self.speak_dialog("MV.L")
         msg="MVL"
@@ -87,10 +90,12 @@ class MoveStopSkill(MycroftSkill):
         self.speak_dialog("MH.F")
         msg="MHF"
         ser00.write(bytes(msg, 'utf-8'))
+        
     def handle_MH_R_intent(self, message):
         self.speak_dialog("MH.R")
         msg="MHR"
         ser00.write(bytes(msg, 'utf-8')
+                    
     def handle_MH_L_intent(self, message):
         self.speak_dialog("MH.L")
         msg="MHL"
@@ -101,14 +106,15 @@ class MoveStopSkill(MycroftSkill):
         msg="MM"
         ser00.write(bytes(msg, 'utf-8'))
     
-    def handle_SR_0_intent(self, message):
+   ''' def handle_SR_0_intent(self, message):
         self.speak_dialog("SR.0")
         msg="SR0"
         ser00.write(bytes(msg, 'utf-8'))
+                    
     def handle_SR_1_intent(self, message):
         self.speak_dialog("SR.1")
         msg="SR1"
-        ser00.write(bytes(msg, 'utf-8'))
+        ser00.write(bytes(msg, 'utf-8'))'''
 
     
 
